@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lwx.mapper.ExampaperMapper">
+
+    <!--    resultType 指定返回类型-->
+    <!--    parameterType 指定传入参数类型 可在形参-->
+    <!--    添加-->
+    <insert id="newstudent">
+        INSERT INTO exampaper(EXAMINATION,ecitizenid,ename) VALUES (#{studentID},#{studentCitizenID},#{studentName})
+    </insert>
+
+    <select id="selectStudent" resultType="com.lwx.bean.StudentBen">
+    SELECT t1.EXAMINATION studentID,t1.ecitizenid studentCitizenID,t1.ename studentName,record.tid studentTestID
+    FROM record
+    INNER JOIN (
+	    SELECT * FROM exampaper WHERE ecitizenid=#{studentCitizenID}
+	    AND ename = #{studentName}
+	    AND EXAMINATION = #{studentID}
+	    )t1
+	ON record.eid =t1.EXAMINATION
+	WHERE record.tid=#{studentTestID}
+    </select>
+
+    <select id="Student" resultType="com.lwx.bean.StudentBen">
+    SELECT t1.EXAMINATION studentID,t1.ecitizenid studentCitizenID,t1.ename studentName,record.tid studentTestID,record.state state
+    FROM record
+    INNER JOIN (
+	    SELECT * FROM exampaper WHERE EXAMINATION=#{studentID}
+	    )t1
+	ON record.eid =t1.EXAMINATION
+    </select>
+
+    <select id="selectStudenment" resultType="com.lwx.bean.StudentBen">
+        SELECT t2.TID studentTestID,t2.achievement ment,
+        t1.EXAMINATION studentID,t1.ecitizenid studentCitizenID,t1.ename studentName
+        FROM achievement t2
+        INNER JOIN(SELECT * FROM exampaper) t1
+        ON t2.EID =t1.EXAMINATION
+        WHERE t2.TID = #{TID}
+    </select>
+
+
+</mapper>

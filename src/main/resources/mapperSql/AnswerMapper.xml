@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lwx.mapper.answerMapper">
+
+    <!--    resultType 指定返回类型-->
+    <!--    parameterType 指定传入参数类型 可在形参-->
+    <!--    添加-->
+     <insert id="insertanswer">
+        INSERT INTO answer(TID,EID,answer) VALUES(#{TID},#{EID},#{answer})
+     </insert>
+
+    <select id="selectanswer" resultType="java.lang.String">
+        select answer.answer FROM answer WHERE tid=#{TID} AND eid = #{EID}
+    </select>
+
+    <update id="updateanswer">
+        UPDATE answer SET answer = #{answer} WHERE tid = #{TID} and eid = #{EID}
+    </update>
+</mapper>

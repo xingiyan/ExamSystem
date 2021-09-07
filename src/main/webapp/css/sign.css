@@ -1,0 +1,141 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    color: inherit;
+    font-family: -apple-system,"Helvetica Neue",Arial,"PingFang SC","Hiragino Sans GB",STHeiti,
+    "Microsoft YaHei","Microsoft JhengHei","Source Han Sans SC","Noto Sans CJK SC",
+    "Source Han Sans CN","Noto Sans SC","Source Han Sans TC","Noto Sans CJK TC",
+    "WenQuanYi Micro Hei",SimSun,sans-serif;
+    height: 100%;
+}
+body{
+    width: 100%;
+}
+.bg{
+    width: 100%;
+    height: 100%;
+    background-image: url("../image/bg.jpeg");
+    background-size: 100% 100%;
+}
+.float_left{
+    float: left;
+}
+.float_right{
+    float: right;
+}
+.sign{
+    margin-top: -150px;
+    position: absolute;
+    top: 50%;
+    right: 100px;
+    float: right;
+    margin-right: 250px;
+    width: 400px;
+    height: 375px;
+    background-image: url("../image/sign.png");
+}
+.logo{
+    color: rgba(237, 125, 49, 1);
+    font-size: 30px;
+    font-weight: bolder;
+}
+.date{
+    text-align: center;
+    height: 300px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+}
+.username-div{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    width: 270px;
+    height: 40px;
+    position: relative;
+
+}
+.username-div img{
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    top: 8px;
+    left: 8px;
+}
+.username{
+    padding-left: 40px;
+    background-color: #a7c2e3 !important;
+    border-radius: 10px;
+    width: 270px;
+    height: 40px;
+}
+.form_btns{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    width: 270px;
+    height: 20%;
+}
+.form_btns button{
+    cursor: pointer;
+    width: 120px;
+    height: 50px;
+    color: white;
+    background-color: rgba(237, 125, 49, 1);
+    font-size: 18px;
+    border-radius: 10px;
+}
+.yz{
+    z-index: 10;
+    padding-top: 30px;
+    background-size: 100% 100%;
+    background-image: url("../image/sign.png");
+    position: fixed;
+    width: 450px;
+    height: 250px;
+    top: 35%;
+    color: rgba(237, 125, 49, 1);
+    font-size: 30px;
+    font-weight: bolder;
+    left: 35%;
+    text-align: center;
+    opacity: 1;
+}
+.yz img{
+    width: 150px;
+    height: 50px;
+    margin-right: 60px;
+    margin-top: 25px;
+    float: right;
+}
+.shield{
+    top: 0;
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.2);
+    z-index: 5;
+}
+.shield #VerificationCodeTest{
+    margin-top: 30px;
+    margin-left: 50px;
+    width: 120px;
+    height: 40px;
+}
+.shield button{
+    width: 100px;
+    height: 40px;
+}
+#determine{
+    margin-top: 35px;
+    margin-left: 100px;
+    float: left;
+}
+#cancel{
+    margin-top: 30px;
+    margin-right: 100px;
+    float: right;
+}

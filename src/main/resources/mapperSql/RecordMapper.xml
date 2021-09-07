@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lwx.mapper.RecordMapper">
+
+    <!--    resultType 指定返回类型-->
+    <!--    parameterType 指定传入参数类型 可在形参-->
+    <!--    添加-->
+    <insert id="newrecord">
+        INSERT INTO record (tid,eid,state) VALUES (#{TID},#{EID},"normal")
+    </insert>
+    <update id="updateState">
+        UPDATE record SET state = #{state} WHERE eid = #{studentid} and tid=#{tid}
+    </update>
+    <select id="selectstate" resultType="java.lang.String">
+        SELECT state FROM record WHERE eid = #{studentid} and tid=#{tid}
+    </select>
+    <select id="selectAllState" resultType="com.lwx.bean.StudentBen">
+        select eid studentID,state state from record WHERE tid=#{tid}
+    </select>
+</mapper>

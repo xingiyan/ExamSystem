@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lwx.mapper.achievementMapper">
+
+    <!--    resultType 指定返回类型-->
+    <!--    parameterType 指定传入参数类型 可在形参-->
+    <!--    添加-->
+     <insert id="insertachievement">
+        INSERT INTO achievement(TID,EID,achievement) VALUES(#{TID},#{EID},#{achievement})
+     </insert>
+
+    <select id="selectachievement" resultType="java.lang.String">
+        select achievement.achievement FROM achievement WHERE tid=#{TID} AND eid = #{EID}
+    </select>
+
+    <update id="updateachievement">
+        UPDATE achievement SET achievement = #{achievement} WHERE tid = #{TID} and eid = #{EID}
+    </update>
+</mapper>

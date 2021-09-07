@@ -1,0 +1,16 @@
+.ka{
+    float: left;
+    width: 25px;
+    text-align: center;
+    line-height: 30px;
+    height: 30px;
+    border: 1px solid #c4c7ce;
+}
+.top{
+    background: rgb(0,023,106);
+    position: fixed;
+    top: 200px;
+    right: 0;
+    width: 108px;
+    color: #fff;
+}

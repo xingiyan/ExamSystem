@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+</head>
+<body>
+<div id="qwe">
+    {{message}},{{name}},{{age}}
+    <input v-model="name">
+    <button v-on:click="reverseMessage">按钮</button>
+    <ul>111
+        <li v-for="item in address">
+            {{item.qweee}}---{{item.sssex}}
+        </li>
+    </ul>
+</div>
+</body>
+<script>
+    var vue2 = new Vue({
+        el:"#qwe",
+        data:{
+            message:"mgs",
+            name:"zixiang",
+            age: 803,
+            address:[{qweee:'菜单1',sssex:'1'},
+                {qweee:'菜单2',sssex:'2'},
+                {qweee:'菜单3',sssex:'3'}
+            ]
+        },
+        methods: {
+            reverseMessage: function () {
+                alert("点击了按钮")
+            }
+        },
+
+    });
+</script>
+</html>
